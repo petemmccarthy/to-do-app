@@ -2,7 +2,7 @@ import React from 'react'
 
 const ToDoItem = (props) => (
 
-  <input placeholder={props.todo.item} ></input>
+  <label>{props.todo.item}</label>
 
 )
 

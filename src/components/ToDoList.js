@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import ToDoItem from './ToDoItem'
+import AddToDo from './AddToDo'
 
 class ToDoList extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       todos: [
         {
@@ -19,20 +20,32 @@ class ToDoList extends Component {
     }
   }
 
+  addToDoItem = (e) => {
+    // e.preventDefault()
+    const todos = this.state.todos
+      todos.unshift(
+        {
+          item: e.target.value,
+          completed: false
+        }
+      )
+      this.setState(todos)
+  }
+
   render() {
     const { todos } = this.state
     let todoList
     if (todos) {
       todoList = todos.map( (todo, i) => {
-        return <ul key={i}>
+        return <div key={i}>
           <ToDoItem todo={todo} />
-        </ul>
+        </div>
       })
     }
 
     return (
       <div>
-        <ul>Add a todo</ul>
+        <AddToDo addToDoItem={this.addToDoItem} />
         {todoList}
       </div>
     )
