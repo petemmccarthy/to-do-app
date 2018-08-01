@@ -35,3 +35,28 @@ body {
   margin: 0;
   border-bottom: 1px solid;
 }
+
+.to-do-list ul .delete {
+	display: none;
+	position: relative;
+	float: right;
+  padding-right: 15px;
+	font-size: 15px;
+  border: none;
+  background: none;
+  outline: none;
+  text-align: justify;
+  color: #aab1b7;
+}
+
+.to-do-list ul .delete:after {
+	content: 'x';
+}
+
+.to-do-list ul .delete:hover {
+	color: #d64264;
+}
+
+.to-do-list ul:hover .delete {
+	display: inline;
+}

@@ -32,6 +32,13 @@ class App extends Component {
     this.setState({todos, newToDo: ""})
   }
 
+  handleClick = (i) => {
+    const { todos } = this.state
+    todos.splice(i, 1)
+    
+    this.setState({todos})
+  }
+
   render() {
     const { todos, newToDo } = this.state
 
@@ -52,8 +59,8 @@ class App extends Component {
               ></input>
             </form>
 
-            <ToDoList todos={todos} />
-            
+            <ToDoList todos={todos} handleClick={this.handleClick}/>
+
             <StatusBar todos={todos} />
           </div>
         </div>
