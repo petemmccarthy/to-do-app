@@ -17,12 +17,15 @@ class ToDoList extends Component {
         {this.props.todos.map( (todo, i) =>
           <ul key={i} className="to-do-item">
             <input
+              checked={todo.completed ? "checked" : ""}
               type="checkbox"
               onClick={() => this.toggleCompleted(i)}
             ></input>
+
             <label className={todo.completed ? 'completed' : ''}>
               {todo.item}
             </label>
+
             <button
               className="delete"
               onClick={() => this.deleteToDoItem(i)}
