@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Header from './components/Header'
+import Title from './components/Title'
 import ToDoList from './components/ToDoList'
+import StatusBar from './components/StatusBar'
 import './App.css'
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
     e.preventDefault()
 
     const { todos, newToDo } = this.state
-    todos.unshift(
+    todos.push(
       {
         item: newToDo,
         completed: false
@@ -37,23 +38,25 @@ class App extends Component {
     return (
       <div className="App">
 
-        <header className="header">
-          <Header />
-        </header>
+          <header className="header">
+            <Title />
+          </header>
+          <div className="to-do-container">
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                value={newToDo}
+                placeholder="add a new item..."
+                onChange={this.onChange}
+              ></input>
+            </form>
 
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              value={newToDo}
-              placeholder="add a new item..."
-              onChange={this.onChange}
-            ></input>
-          </form>
-
-          <ToDoList todos={todos} />
+            <ToDoList todos={todos} />
+            
+            <StatusBar todos={todos} />
+          </div>
         </div>
-
       </div>
     )
   }

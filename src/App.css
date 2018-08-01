@@ -1,13 +1,37 @@
 body {
+  background-color: #b7d2ff;
+  font-family: monospace;
+}
+
+.to-do-container {
+  background-color: #b3f9c7;
+  width: 30%;
+  font-size: 20px;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 4px;
+  box-shadow: 2px 2px #888888;
+}
+
+.App form {
+  border-bottom: 1px solid;
+  line-height: 2em;
+}
+
+.App input {
+  background-color: #b3f9c7;
+  padding-left: 10px;
+  width: 90%;
+  border: none;
+  font-size: 14px;
+  font-style: italic;
+}
+.App input:focus {
+  outline: none;
+}
+
+.to-do-item {
+  padding: 5px 0px 5px 10px;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-.App {
-  text-align: center;
-}
-
-ul {
-  padding: 0;
+  border-bottom: 1px solid;
 }
