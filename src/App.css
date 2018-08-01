@@ -20,7 +20,7 @@ body {
 
 .App input {
   background-color: #b3f9c7;
-  padding-left: 10px;
+  padding-left: 35px;
   width: 90%;
   border: none;
   font-size: 14px;
@@ -59,4 +59,19 @@ body {
 
 .to-do-list ul:hover .delete {
 	display: inline;
+}
+
+.to-do-list input {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.to-do-list label {
+  padding-left: 25px;
+}
+
+.completed {
+  text-decoration: line-through;
 }

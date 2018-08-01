@@ -32,11 +32,16 @@ class App extends Component {
     this.setState({todos, newToDo: ""})
   }
 
-  handleClick = (i) => {
+  handleDeleteToDoItem = (i) => {
     const { todos } = this.state
     todos.splice(i, 1)
-    
     this.setState({todos})
+  }
+
+  handleToggleCompleted = (i) => {
+    const { todos } = this.state
+    todos[i].completed = !todos[i].completed
+    this.setState(todos)
   }
 
   render() {
@@ -45,24 +50,27 @@ class App extends Component {
     return (
       <div className="App">
 
-          <header className="header">
-            <Title />
-          </header>
-          <div className="to-do-container">
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                value={newToDo}
-                placeholder="add a new item..."
-                onChange={this.onChange}
-              ></input>
-            </form>
+        <header className="header">
+          <Title />
+        </header>
 
-            <ToDoList todos={todos} handleClick={this.handleClick}/>
+        <div className="to-do-container">
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={newToDo}
+              placeholder="add a new item..."
+              onChange={this.onChange}
+            ></input>
+          </form>
 
-            <StatusBar todos={todos} />
-          </div>
+          <ToDoList
+            todos={todos}
+            handleDeleteToDoItem={this.handleDeleteToDoItem}
+            handleToggleCompleted={this.handleToggleCompleted}
+          />
+
+          <StatusBar todos={todos} />
         </div>
       </div>
     )

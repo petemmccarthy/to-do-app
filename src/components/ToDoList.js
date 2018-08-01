@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 
 class ToDoList extends Component {
 
-  deleteToDo(i) {
-    this.props.handleClick(i)
+  deleteToDoItem(i) {
+    this.props.handleDeleteToDoItem(i)
+  }
+
+  toggleCompleted(i) {
+    this.props.handleToggleCompleted(i)
   }
 
   render() {
@@ -11,19 +15,22 @@ class ToDoList extends Component {
     return (
       <div className="to-do-list" >
         {this.props.todos.map( (todo, i) =>
-          <ul
-            className="to-do-item"
-            key={i}>
-            {todo.item}
+          <ul key={i} className="to-do-item">
+            <input
+              type="checkbox"
+              onClick={() => this.toggleCompleted(i)}
+            ></input>
+            <label className={todo.completed ? 'completed' : ''}>
+              {todo.item}
+            </label>
             <button
               className="delete"
-              onClick={() => this.deleteToDo(i)}
+              onClick={() => this.deleteToDoItem(i)}
             ></button>
           </ul>
         )}
       </div>
     )
-
   }
 
 }
