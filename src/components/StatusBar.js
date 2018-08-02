@@ -3,12 +3,11 @@ import styled from 'styled-components'
 
 const StatusBarWrapper  = styled.div`
   text-align: center;
-  padding: 5px 0px 5px 0px;
 `
 
 const StatusBar = props => (
   <StatusBarWrapper>
-    <div>
+    <div className={props.todos.length === 0 ? 'hidden' : 'status-bar'}>
       <span>
         {props.todos.length} item{props.todos.length === 1 ? ' ' : 's '}
       </span>

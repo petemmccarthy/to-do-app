@@ -1,5 +1,4 @@
 body {
-  background-color: #b7d2ff;
   font-family: monospace;
 }
 
@@ -44,6 +43,7 @@ body {
 	font-size: 15px;
   border: none;
   background: none;
+  outline: none;
   color: #aab1b7;
 }
 
@@ -60,16 +60,23 @@ body {
 }
 
 .to-do-list input {
-  position: absolute;
+  position: relative;
   width: 15px;
   height: 15px;
   margin-top: 5px;
 }
 
 .to-do-list label {
-  padding-left: 25px;
+  padding-left: 5px;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.status-bar {
+  padding: 5px 5px;
+}
+.hidden {
+  display: none;
 }
