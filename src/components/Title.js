@@ -7,7 +7,7 @@ const TitleWrapper  = styled.div`
   margin: 50px 0px 15px 0px;
 `
 
-const Title = (props) => (
+const Title = () => (
   <TitleWrapper>
     <div>My To do list</div>
   </TitleWrapper>

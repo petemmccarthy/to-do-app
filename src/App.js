@@ -34,7 +34,9 @@ class App extends Component {
 
   handleDeleteToDoItem = (i) => {
     const { todos } = this.state
-    todos.splice(i, 1)
+    if (i !== -1) {
+      todos.splice(i, 1)
+    }
     this.setState({todos})
   }
 
