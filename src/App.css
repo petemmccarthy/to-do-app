@@ -4,7 +4,8 @@ body {
 
 .to-do-container {
   background-color: #b3f9c7;
-  width: 30%;
+  width: 40%;
+  min-width: 250px;
   font-size: 20px;
   margin: auto;
   border: 1px solid;
@@ -19,7 +20,7 @@ body {
 
 .App input {
   background-color: #b3f9c7;
-  padding-left: 35px;
+  text-align: center;
   width: 90%;
   border: none;
   font-size: 14px;

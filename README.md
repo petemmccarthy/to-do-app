@@ -6,7 +6,7 @@ A simple 'To Do' app built using the React library. Tasks can be created, delete
 
 * Ability to edit a To Do
 * Toggle between open and completed To Dos
-* Mark as complete checkbox box is functional but ugly, it needs more design
+* Mark as complete checkbox box is functional but ugly
 * Tests need adding
 
 ## Prerequisites

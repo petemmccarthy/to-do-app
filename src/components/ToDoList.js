@@ -10,7 +10,7 @@ class ToDoList extends Component {
     this.props.handleToggleCompleted(i)
   }
 
-  render() {
+  render(props) {
 
     return (
       <div className="to-do-list" >
