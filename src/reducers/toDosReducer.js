@@ -1,12 +1,6 @@
-// import { ADD_NEW_TODO, DELETE_TODO, TOGGLE_COMPLETED } from '../actions/types'
 import { ADD_NEW_TODO } from '../actions/types'
 
-const initialState = [
-  // {
-  //   item: "initial todo",
-  //   completed: false
-  // }
-]
+const initialState = []
 
 export default function(state = initialState, action) {
   switch(action.type) {
@@ -18,19 +12,6 @@ export default function(state = initialState, action) {
         completed: false
       }
     ]
-    // case DELETE_TODO:
-    // return [
-    //   ...state,
-    //   {
-    //
-    //   }
-    // ]
-    // case TOGGLE_COMPLETED:
-    // return [
-    //   ...state,
-    //   {
-    //   }
-    // ]
     default:
     return state
   }

@@ -32,14 +32,12 @@ class ToDosContainer extends Component {
       todos.splice(i, 1)
     }
     this.setState({todos})
-    // this.props.deleteToDo(i)
   }
 
   handleToggleCompleted = (i) => {
     const { todos } = this.props
     todos[i].completed = !todos[i].completed
     this.setState(todos)
-    // this.props.toggleCompleted(i)
   }
 
   render() {
