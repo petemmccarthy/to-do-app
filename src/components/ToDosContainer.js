@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ToDoList from './ToDoList'
 import StatusBar from './StatusBar'
 
-import { createToDo, deleteToDo, toggleCompleted } from '../actions'
+import { createToDo, toggleCompleted } from '../actions'
 import { connect } from 'react-redux'
 
 class ToDosContainer extends Component {
@@ -20,10 +20,17 @@ class ToDosContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    if (!this.state.newToDo) {
+      return
+    }
 
     const newToDo = this.state.newToDo
     this.props.createToDo(newToDo)
     this.setState({newToDo: ""})
+  }
+
+  handleToggleCompleted = (id) => {
+    this.props.toggleCompleted(id)
   }
 
   handleDeleteToDoItem = (i) => {
@@ -32,12 +39,6 @@ class ToDosContainer extends Component {
       todos.splice(i, 1)
     }
     this.setState({todos})
-  }
-
-  handleToggleCompleted = (i) => {
-    const { todos } = this.props
-    todos[i].completed = !todos[i].completed
-    this.setState(todos)
   }
 
   render() {
@@ -75,4 +76,4 @@ const mapStateToProps = state => ({
   todos: state.todos
 })
 
-export default connect(mapStateToProps, { createToDo, deleteToDo, toggleCompleted })(ToDosContainer)
+export default connect(mapStateToProps, { createToDo, toggleCompleted })(ToDosContainer)

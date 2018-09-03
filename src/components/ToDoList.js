@@ -6,8 +6,8 @@ class ToDoList extends Component {
     this.props.handleDeleteToDoItem(i)
   }
 
-  toggleCompleted(i) {
-    this.props.handleToggleCompleted(i)
+  toggleCompleted(id) {
+    this.props.handleToggleCompleted(id)
   }
 
   render(props) {
@@ -15,11 +15,11 @@ class ToDoList extends Component {
     return (
       <div className="to-do-list" >
         {this.props.todos.map( (todo, i) =>
-          <ul key={i} className="to-do-item">
+          <ul key={todo.id} className="to-do-item">
             <input
               checked={todo.completed ? "checked" : ""}
               type="checkbox"
-              onClick={() => this.toggleCompleted(i)}
+              onClick={() => this.toggleCompleted(todo.id)}
             ></input>
 
             <label className={todo.completed ? 'completed' : ''}>
