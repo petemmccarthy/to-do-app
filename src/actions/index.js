@@ -1,4 +1,4 @@
-import { ADD_NEW_TODO, TOGGLE_COMPLETED } from './types'
+import { ADD_NEW_TODO, TOGGLE_COMPLETED, DELETE_TODO } from './types'
 let toDoID = 0
 
 export const createToDo = newToDo => ({
@@ -9,5 +9,10 @@ export const createToDo = newToDo => ({
 
 export const toggleCompleted = id => ({
   type: TOGGLE_COMPLETED,
+  id
+})
+
+export const deleteToDo = id => ({
+  type: DELETE_TODO,
   id
 })

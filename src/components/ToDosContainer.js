@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ToDoList from './ToDoList'
 import StatusBar from './StatusBar'
 
-import { createToDo, toggleCompleted } from '../actions'
+import { createToDo, toggleCompleted, deleteToDo } from '../actions'
 import { connect } from 'react-redux'
 
 class ToDosContainer extends Component {
@@ -33,12 +33,8 @@ class ToDosContainer extends Component {
     this.props.toggleCompleted(id)
   }
 
-  handleDeleteToDoItem = (i) => {
-    const { todos } = this.props
-    if (i !== -1) {
-      todos.splice(i, 1)
-    }
-    this.setState({todos})
+  handleDeleteToDoItem = (id) => {
+    this.props.deleteToDo(id)
   }
 
   render() {
@@ -76,4 +72,4 @@ const mapStateToProps = state => ({
   todos: state.todos
 })
 
-export default connect(mapStateToProps, { createToDo, toggleCompleted })(ToDosContainer)
+export default connect(mapStateToProps, { createToDo, toggleCompleted, deleteToDo })(ToDosContainer)

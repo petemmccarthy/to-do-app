@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 class ToDoList extends Component {
 
-  deleteToDoItem(i) {
-    this.props.handleDeleteToDoItem(i)
+  deleteToDoItem(id) {
+    this.props.handleDeleteToDoItem(id)
   }
 
   toggleCompleted(id) {
@@ -14,7 +14,7 @@ class ToDoList extends Component {
 
     return (
       <div className="to-do-list" >
-        {this.props.todos.map( (todo, i) =>
+        {this.props.todos.map( (todo) =>
           <ul key={todo.id} className="to-do-item">
             <input
               checked={todo.completed ? "checked" : ""}
@@ -28,7 +28,7 @@ class ToDoList extends Component {
 
             <button
               className="delete"
-              onClick={() => this.deleteToDoItem(i)}
+              onClick={() => this.deleteToDoItem(todo.id)}
             ></button>
           </ul>
         )}
