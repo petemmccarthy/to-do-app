@@ -9,7 +9,7 @@ const TitleWrapper  = styled.div`
 
 const Title = () => (
   <TitleWrapper>
-    <div>My To Do list</div>
+    <h4>My ToDo List</h4>
   </TitleWrapper>
 )
 
