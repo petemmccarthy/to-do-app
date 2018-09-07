@@ -8,10 +8,10 @@ const StatusBarWrapper  = styled.div`
 const StatusBar = props => (
   <StatusBarWrapper>
     <div className={props.todos.length === 0 ? 'hidden' : 'status-bar'}>
-      <span>
+      <span className="item-count">
         {props.todos.length} item{props.todos.length === 1 ? ' ' : 's '}
       </span>
-      <span>
+      <span className="completed-count">
         {props.todos.filter( todo => todo.completed === true).length} completed
       </span>
     </div>

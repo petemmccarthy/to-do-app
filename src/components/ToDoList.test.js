@@ -15,21 +15,36 @@ describe('ToDoList component', () => {
   })
 
   describe('when a todo list has been created', () => {
+    const todos = [
+      {
+        id: 1,
+        item: 'first item',
+        completed: true
+      },
+      {
+        id: 2,
+        item: 'second item',
+        completed: false
+      }
+    ]
+
+    const deleteToDoItemSpy = jest.fn()
+    ToDoList.prototype.deleteToDoItem = deleteToDoItemSpy
+
+    const toDoList = shallow(<ToDoList todos={todos} onClick={deleteToDoItemSpy} />)
+
     it('should render the complete list of todos', () => {
-      const todos = [
-        {
-          id: 1,
-          item: 'first item',
-          completed: true
-        },
-        {
-          id: 2,
-          item: 'second item',
-          completed: false
-        }
-      ]
-      const toDoList = shallow(<ToDoList todos={todos} />)
-      expect(toDoList.find('ul').length).toEqual(todos.length);
+      expect(toDoList.find('ul').length).toEqual(todos.length)
+    })
+
+    it('should mark completed todos', () => {
+      expect(toDoList.find('.completed').length).toEqual(1)
+    })
+
+    it('should call deleteToDoItem when delete button clicked', ()=> {
+      const deleteButton = toDoList.find('button').first()
+      deleteButton.simulate('click')
+      expect(deleteToDoItemSpy).toHaveBeenCalledTimes(1)
     })
   })
 
