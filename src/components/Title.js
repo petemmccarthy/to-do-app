@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const TitleWrapper  = styled.div`
+const TitleWrapper  = styled.h2`
   text-align: center;
-  font-size: 30px;
   margin: 50px 0px 15px 0px;
 `
 
 const Title = () => (
   <TitleWrapper>
-    <h4>My ToDo List</h4>
+    <header className="header">
+      <h2>My ToDo List</h2>
+    </header>
   </TitleWrapper>
 )
 

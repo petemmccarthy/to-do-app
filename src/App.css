@@ -1,12 +1,16 @@
+:root {
+  --container-bg-color: #b3f9c7;
+}
+
 body {
   font-family: monospace;
 }
 
 .to-do-container {
-  background-color: #b3f9c7;
+  background-color: var(--container-bg-color);
   width: 40%;
   min-width: 250px;
-  font-size: 20px;
+  font-size: 14px;
   margin: auto;
   border: 1px solid;
   border-radius: 4px;
@@ -19,12 +23,13 @@ body {
 }
 
 .App input {
-  background-color: #b3f9c7;
+  background-color: var(--container-bg-color);
   text-align: center;
-  width: 90%;
+  width: 99%;
   border: none;
   font-size: 14px;
   font-style: italic;
+  font-family: monospace;
 }
 .App input:focus {
   outline: none;
@@ -34,6 +39,7 @@ body {
   padding: 5px 0px 5px 10px;
   margin: 0;
   border-bottom: 1px solid;
+  overflow: hidden;
 }
 
 .to-do-list ul .delete {
@@ -48,7 +54,7 @@ body {
   color: #aab1b7;
 }
 
-.to-do-list ul .delete:after {
+.to-do-list ul .delete::after {
 	content: 'x';
 }
 
