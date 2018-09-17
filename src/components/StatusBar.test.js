@@ -36,7 +36,7 @@ describe('StatusBar component', () => {
     expect(statusBar.find('.status-bar').length).toEqual(1)
 
     const itemCount = statusBar.find('.item-count')
-    expect(itemCount.text().trim()).toEqual('2 items')
+    expect(itemCount.text().trim()).toEqual('2 items,')
 
     const completedCount = statusBar.find('.completed-count')
     expect(completedCount.text().trim()).toEqual('1 completed')

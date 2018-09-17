@@ -14,17 +14,18 @@ class ToDosContainer extends Component {
     }
   }
 
-  onChange = (e) => {
+  handleChange = (e) => {
     this.setState({newToDo: e.target.value})
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (!this.state.newToDo) {
+    const newToDo = this.state.newToDo
+    
+    if (!newToDo) {
       return
     }
 
-    const newToDo = this.state.newToDo
     this.props.createToDo(newToDo)
     this.setState({newToDo: ""})
   }
@@ -51,7 +52,7 @@ class ToDosContainer extends Component {
               type="text"
               value={newToDo}
               placeholder="add a new item..."
-              onChange={this.onChange}
+              onChange={this.handleChange}
             ></input>
           </form>
 
