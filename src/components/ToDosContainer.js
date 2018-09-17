@@ -47,7 +47,7 @@ class ToDosContainer extends Component {
         <div className="to-do-container">
           <form onSubmit={this.handleSubmit}>
             <input
-              maxlength="20"
+              maxLength="20"
               type="text"
               value={newToDo}
               placeholder="add a new item..."
